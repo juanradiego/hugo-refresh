@@ -1,0 +1,31 @@
+{{- $text1 := (.Inner)  -}}
+
+{{- $original2 := (.Page.Resources.ByType "image").GetMatch (printf "*%s*" (.Get "src")) -}}
+{{- $width2    := printf "%s" (.Get "width" ) -}}
+{{- $height2   := printf "%s" (.Get "height") -}}
+{{- $size2     := printf "%sx%s" $width2 $height2 -}}
+{{- $caption2  := printf "%s" (.Get "caption") -}}
+{{- $alt2      := printf "%s" (.Get "alt") -}}
+
+<div class="columns is-centered container">
+    <div class="column is-half">
+            {{- $text1 | markdownify -}}
+    </div>
+    <div class="column is-half">
+        <figure>
+            {{- with $original2 -}}
+                {{- $image2 := .Resize $size2 -}}
+                {{- if $caption2 -}}
+                    <img class="rounded-corners" src="{{- $image2.RelPermalink -}}" 
+                        width="{{- $image2.Width -}}" height="{{- $image2.Height -}}" alt="{{- $alt2 -}}" >
+                {{- else -}}
+                    <img class="rounded-corners" src="{{- $image2.RelPermalink -}}" 
+                        width="{{- $image2.Width -}}" height="{{- $image2.Height -}}">
+                {{- end -}}
+                {{- if $caption2 -}}
+                    <figcaption>{{- $caption2 -}}</figcaption>
+                {{- end -}}
+            {{- end -}}
+        </figure>
+    </div>
+</div>
