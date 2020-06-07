@@ -1,11 +1,11 @@
 - id: readMore
   translation: "Lee mas"
 - id: mainMenu
-  translation: "Menú"
+  translation: "Secciones"
 - id: allTags
-  translation: "Todas las etiquetas"
+  translation: "Temas que me interesan"
 - id: tags
-  translation: "Etiquetas"
+  translation: "Temas que me interesan"
 - id: lastModified
   translation: "Última modificación"
 - id: website
@@ -13,11 +13,11 @@
 - id: credits
   translation: "Créditos"
 - id: copyright
-  translation: "Derechos de autor"
+  translation: "Copyright"
 - id: contacts
-  translation: "Contactos"
+  translation: "Contacto"
 - id: homepage
-  translation: "Homepage"
+  translation: "Inicio"
 
 
   
